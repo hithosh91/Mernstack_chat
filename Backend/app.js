@@ -2,6 +2,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const router = require("./Routes/Auth.routes");
 const mongooes = require("mongoose");
+const cokkies = require("cookie-parser");
+const messageroute = require("./Routes/MessageRoutes");
 
 dotenv.config();
 
@@ -12,7 +14,10 @@ const app = express();
 
 //middleware
 app.use(express.json());
+
+app.use(cokkies());
 app.use("/api/auth", router);
+app.use("/message", messageroute);
 //to parse the income request with json payload
 
 //mongooes db
