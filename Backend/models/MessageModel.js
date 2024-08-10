@@ -20,4 +20,4 @@ const messageSchema = new mongooes.Schema(
   { timestamps: true }
 );
 
-module.exports = mongooes.model("Messages", messageSchema);
+module.exports = mongooes.model("Message", messageSchema);

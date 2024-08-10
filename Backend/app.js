@@ -4,7 +4,7 @@ const router = require("./Routes/Auth.routes");
 const mongooes = require("mongoose");
 const cokkies = require("cookie-parser");
 const messageroute = require("./Routes/MessageRoutes");
-
+const userro = require("./Routes/User.route");
 dotenv.config();
 
 const port = process.env.PORT || 4000;
@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(cokkies());
 app.use("/api/auth", router);
 app.use("/message", messageroute);
+app.use("/users", userro);
 //to parse the income request with json payload
 
 //mongooes db
@@ -28,6 +29,7 @@ mongooes
   })
   .catch((error) => {
     console.log("error while connect db");
+    console.log(error.message);
   });
 
 app.listen(port, () => {
