@@ -6,6 +6,9 @@ const Conversations = () => {
       <Converation />
       <Converation />
       <Converation />
+      <Converation />
+      <Converation />
+      <Converation />
     </div>
   );
 };

@@ -1,13 +1,13 @@
-import Converation from "./Converation";
+import Conversations from "./Conversations";
 import Logout from "./Logout";
 import Searchbar from "./Searchbar";
 
 const Sidebar = () => {
   return (
-    <div>
+    <div className="bg-gray-500 p-4">
       <Searchbar />
       <div className="divider px-3"></div>
-      <Converation />
+      <Conversations />
       <Logout />
     </div>
   );
