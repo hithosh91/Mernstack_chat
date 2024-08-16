@@ -4,9 +4,9 @@ import Searchbar from "./Searchbar";
 
 const Sidebar = () => {
   return (
-    <div className="bg-gray-500 p-4">
+    <div className="border-r border-slate-500 p-4 flex flex-col">
       <Searchbar />
-      <div className="divider px-3"></div>
+      <div className="divider px-3 "></div>
       <Conversations />
       <Logout />
     </div>

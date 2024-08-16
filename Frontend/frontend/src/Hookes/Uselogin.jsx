@@ -8,8 +8,9 @@ export const Uselogin = () => {
   const login = async (username, password) => {
     setLoading(true);
     try {
-      const respose = await fetch("api/auth/login", {
+      const respose = await fetch("/api/api/auth/login", {
         method: "POST",
+
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });

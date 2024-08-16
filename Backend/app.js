@@ -5,6 +5,8 @@ const mongooes = require("mongoose");
 const cokkies = require("cookie-parser");
 const messageroute = require("./Routes/MessageRoutes");
 const userro = require("./Routes/User.route");
+const cors = require("cors");
+
 dotenv.config();
 
 const port = process.env.PORT || 4000;
@@ -13,9 +15,17 @@ const url = process.env.URL;
 const app = express();
 
 //middleware
-app.use(express.json());
 
 app.use(cokkies());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
+
+app.use(express.json());
+
 app.use("/api/auth", router);
 app.use("/message", messageroute);
 app.use("/users", userro);
